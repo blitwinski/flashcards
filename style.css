@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+}
+
+.draw {
+    margin:50px;
+    padding:10px;
+    font-family: Mono;
+    font-style: italic;
+    font-size: 55px;
+}
+.result {
+    margin: 2px;
+    padding: 10px;
+    border: 2px solid;
+}
+
+.result .fail {
+    color: red;
+}
+
+.result .success {
+    color: green;
+}
+
+.time {
+    color:black;
+}
+
+.photo {
+    width: 500px;
+    height: 320px;
+    perspective: 200px;
+}
+
+.photo:hover {
+    overflow: hidden;
+}
+
+.game {
+    margin-top: 50px;
+}
+
+@media (min-width:800px){
+.photo {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    }
+}
