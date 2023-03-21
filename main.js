@@ -42,7 +42,7 @@ function word_check(e) {
   const word=e.target.elements[0].value;
   console.log(e.target.elements[0].value);
   //form.reset();
-  if (word===Object.values(words)[i] && seconds>0 && 
+  if (word.toLowerCase()===Object.values(words)[i] && seconds>0 && 
   seconds<11) { 
     time_handler.innerText='';
     clearInterval(loop); 
