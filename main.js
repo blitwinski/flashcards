@@ -104,7 +104,7 @@ function word_check(e) {
     }
   result.innerText=output;
   button.disabled=false;
-  
+  win=false;
 }
 
 function counter() {
