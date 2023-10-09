@@ -5,16 +5,35 @@
 .draw {
     margin:50px;
     padding:10px;
-    font-family: Mono;
-    font-style: italic;
+    font-family: Gloria Hallelujah;
     font-size: 55px;
 }
+
+.btn-play {
+    margin-left: 10px;
+    font-size: 15px;
+    padding:10px 25px; 
+    background: olive; 
+    border:none;
+    font-weight:bold;
+    color:#fff;
+}
+
+.btn-submit {
+    background-color: gray;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    border:none;
+}
 .result {
+    width: 250px;
     margin: 2px;
     padding: 10px;
     border: 2px solid;
 }
-
+/*
 .result .fail {
     color: red;
 }
@@ -22,30 +41,73 @@
 .result .success {
     color: green;
 }
+*/
 
-.time {
-    color:black;
+.all {
+    
+    margin-left: 0 auto;
+    display: flex;
 }
 
-.photo {
+
+.all .time {
+    color:black;
+    font-size: 45px;
+    margin:100px;
+}
+
+.all .photo {
     width: 500px;
     height: 320px;
     perspective: 200px;
 }
+
+/*
+.photo::after {
+    content:'';
+    display:block;
+    clear:both;
+  }
+*/
 
 .photo:hover {
     overflow: hidden;
 }
 
 .game {
-    margin-top: 50px;
+    /*margin: 50px auto;*/
+    width: 11.7rem;
+    /*display: block;*/
+    border: 2px solid #2e3c4d;
+   /* box-shadow:0 0 15px 4px rgba(0,0,0,0.06);*/
 }
 
-@media (min-width:800px){
-.photo {
+form {
+    color:pink;
+}
+
+@media screen and (max-width: 600px) {
+.all {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: flex-start;
+}
+
+.photo {
+    max-width:100%;
+    height:auto;
+}
+
+}
+@media screen and (max-height: 500px) {
+.photo {
+        margin: 0;
+        height:auto;
+        width:auto;
     }
+.draw {
+    margin: 0;
+    font-size: 30px;
+}
 }

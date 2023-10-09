@@ -6,15 +6,19 @@
     <title>Flashcards</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <link rel='stylesheet' href="https://fonts.googleapis.com/css?family=Gloria Hallelujah">
     <script src='main.js' defer></script>
 </head>
 <body>
     <h1>Flashcards</h1>
-    <button>Play!</button>
+    <button class='btn-play'>Play!</button>
     <div class='draw'></div>
-    <div class='photo'></div>
-    <form name='game'> <input name="word"></input><input type='submit'></input></form>
+    <div class='all'>
+         <div class='photo'></div>
+         <div class='time'></div>
+    </div>
+    <form name='game' class='game'> <input name='word'></input><input type='submit'
+        name='submit' class='btn-submit' value='Submit'></input></form>
     <div class='result'></div>
-    <div class='time'></div>
 </body>
 </html>
