@@ -76,7 +76,7 @@ function word_check(e) {
   //if (lang) lang_set=Object.values(words)[i];
   //else lang_set=Object.keys(words)[i];
   //console.log(lang_set);
-  if (!win && word.toLowerCase()===Object.values(words)[i] && seconds>0 && 
+  if (!win && word.toLowerCase().trim()===Object.values(words)[i] && seconds>0 && 
   seconds<21) { 
     //console.log(Object.values(words)[i]);
     time_handler.innerText='';
@@ -90,7 +90,7 @@ function word_check(e) {
     else 
     { 
       if (win) { win=false; 
-        //form.reset();
+        form.reset();
         return; 
       }
       output='FAIL';
@@ -99,7 +99,7 @@ function word_check(e) {
   
       time_handler.innerText='';
       clearInterval(loop);
-      //win=false;
+      win=false;
       seconds=21;
     }
   result.innerText=output;
