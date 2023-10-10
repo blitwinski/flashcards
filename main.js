@@ -25,7 +25,7 @@ let lang_set;
 let j=0;
 let output;
 
-let seconds=21;
+let seconds=31;
 let delta=0;
 
 let loop;
@@ -44,7 +44,8 @@ function draw(e){
   //e.preventDefault();
     //className = ""
     //result.innerHTML='';
-    button.disabled=true;
+    btn_play.disabled=true;
+    btn_submit.disabled=false;
     result.style.display='none';
     //result.classList.remove('result');
     i=Math.floor(Math.random()*words_length);
@@ -76,35 +77,37 @@ function word_check(e) {
   //if (lang) lang_set=Object.values(words)[i];
   //else lang_set=Object.keys(words)[i];
   //console.log(lang_set);
-  if (!win && word.toLowerCase().trim()===Object.values(words)[i] && seconds>0 && 
-  seconds<21) { 
+  if (word.toLowerCase().trim()===Object.values(words)[i] && seconds>0 && 
+  seconds<31) { 
     //console.log(Object.values(words)[i]);
     time_handler.innerText='';
     clearInterval(loop); 
     output='SUCCESS';
     //result.classList.add('success');
     result.style.color='green';
-    win=true;
-    seconds=21;
+   // win=true;
+    seconds=31;
   }
     else 
     { 
+  /*
       if (win) { win=false; 
         form.reset();
         return; 
       }
+      */
       output='FAIL';
       result.style.color='red';
       //result.classList.add('fail');
   
       time_handler.innerText='';
       clearInterval(loop);
-      win=false;
-      seconds=21;
+     // win=false;
+      seconds=31;
     }
   result.innerText=output;
-  button.disabled=false;
-  win=false;
+  btn_play.disabled=false;
+  btn_submit.disabled=true;
 }
 
 function counter() {
@@ -115,8 +118,8 @@ function counter() {
       clearInterval(loop); 
       time_handler.innerText='TIMEOUT!';
       time_handler.style.color='magenta';
-      seconds=21;
-      button.disabled=false;
+      seconds=31;
+      btn_play.disabled=false;
     }
     
     //console.log(seconds);
@@ -127,21 +130,21 @@ function counter() {
 function change() {
     if (delta===0) delta=1;
     //if (seconds<21) e.stopPropagation();
-    if (seconds===21) loop=setInterval(counter,1000);
+    if (seconds===31) loop=setInterval(counter,1000);
     console.log('hello from change()')
 }
 
-const button=document.querySelector('button');
-console.log(button);
+const btn_play=document.querySelector('.btn-play');
+//console.log(btn_play);
 const game=document.querySelector('.draw');
 console.log(game);
 const photo=document.querySelector('.photo');
 const form = document.querySelector('form[name="game"]');
-//const word=document.querySelector('input[name="word"]');
-//console.log(word)
+const btn_submit=document.querySelector('.btn-submit');
+//console.log(btn_submit);
 const result=document.querySelector('.result');
 const time_handler=document.querySelector('.time');
 
-button.addEventListener('click', change);
-button.addEventListener('click', draw);
+btn_play.addEventListener('click', change);
+btn_play.addEventListener('click', draw);
 form.addEventListener('submit',word_check);

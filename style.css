@@ -32,8 +32,9 @@
     width: 250px;
     margin: 2px;
     padding: 10px;
-    border: 2px solid;
+    border: 2px solid; 
     border-radius: 5px;
+    display: none;
 }
 /*
 .result .fail {
@@ -61,7 +62,6 @@
 .all .photo {
     width: 500px;
     height: 320px;
-    perspective: 200px;
 }
 
 /*
@@ -82,6 +82,7 @@
     /*display: block;*/
     border: 2px solid #2e3c4d;
    /* box-shadow:0 0 15px 4px rgba(0,0,0,0.06);*/
+   
 }
 
 form {
@@ -89,27 +90,34 @@ form {
 }
 
 @media screen and (max-width: 600px) {
+.draw {
+    margin: 0 auto;
+}
+
 .all {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: flex-start;
+    display: block;
 }
 
 .photo {
     max-width:100%;
     height:auto;
 }
+.all .time {
+    margin: 0 auto;
+    width: 100%;
+}
 
 }
-@media screen and (max-height: 500px) {
+
+@media screen and (max-height: 500px) {   
 .photo {
-        margin: 0;
+        max-width:100%;
         height:auto;
-        width:auto;
     }
-.draw {
-    margin: 0;
-    font-size: 30px;
-}
+h1, .btn-play .all .time{
+        display:flex;
+        flex-direction:row;
+        margin:0 auto;
+        height:50%;
+    }
 }
