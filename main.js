@@ -44,6 +44,7 @@ function draw(e){
   //e.preventDefault();
     //className = ""
     //result.innerHTML='';
+    form.reset();
     btn_play.disabled=true;
     btn_submit.disabled=false;
     result.style.display='none';
@@ -108,6 +109,7 @@ function word_check(e) {
   result.innerText=output;
   btn_play.disabled=false;
   btn_submit.disabled=true;
+  //form.reset();
 }
 
 function counter() {
